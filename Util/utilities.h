@@ -1,13 +1,15 @@
 #pragma once
 
-// include commonly used standard headers
+// c standard headers
 #include <stdint.h>
+
+// c++ standard headers
 #include <vector>
 #include <memory>
 #include <string>
 #include <iostream>
 
-// redefine fixed size int's for less typing
+// redefine primitives for less typing
 typedef int8_t   i8;
 typedef int16_t  i16;
 typedef int32_t  i32;
@@ -18,7 +20,10 @@ typedef uint16_t u16;
 typedef uint32_t u32;
 typedef uint64_t u64;
 
-//useful macros
+typedef float    f32;
+typedef double   f64;
+
+// useful macros
 #define RAW_ARRAY_SIZE(X) (sizeof(x) / sizeof(x[0]))
 
 #ifdef _DEBUG
