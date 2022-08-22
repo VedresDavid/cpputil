@@ -23,9 +23,20 @@ typedef uint64_t u64;
 typedef float    f32;
 typedef double   f64;
 
-// useful macros
 #define RAW_ARRAY_SIZE(X) (sizeof(x) / sizeof(x[0]))
 
+// -----------------------console stuff-----------------------
+
+// clears the console screen but does not move the cursor position to the beginning
+#define CLEAR_SCREEN printf("\033[2J");
+
+// moves the cursor to the beginning of the screen
+#define CURSOR_HOME printf("\033[H");
+
+// clears the console and moves the cursor to the beginning.
+#define CLEAR printf("\033[2J\033[H");
+
+// debug loggers
 #ifdef _DEBUG
 
 	#define DEBUG_ERROR_LOG(msg) std::cout << "[\x1B[31mError\033[0m]   File: " << __FILE__ << " Line: " << __LINE__ << " Message: " << msg << std::endl;
@@ -40,4 +51,4 @@ typedef double   f64;
 	#define DEBUG_INFO_LOG(msg)
 	#define DEBUG_SUCCESS_LOG(msg)
 
-#endif // DEBUG
+#endif // _DEBUG
